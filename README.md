@@ -1,1 +1,1 @@
-# Hibernate_inheritance_mapping
+# Hibernate
