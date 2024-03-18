@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <!-- Database connection settings -->
+ <session-factory>
+  <property name="hbm2ddl.auto">update</property>
+  <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+  <property name="connection.url">jdbc:mysql://localhost:3306/mydb</property>
+  <property name="connection.username">root</property>
+  <property name="connection.password">root@1234</property>
+  <!-- SQL dialect for MySQL -->
+  <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+  <!-- Enable Hibernate's automatic session context management -->
+  <property name="current_session_context_class">thread</property>
+  <!--  second-level cache -->
+  <property name="hibernate.cache.use_second_level_cache">enable</property>
+  <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property>
+  <!-- Echo all executed SQL to stdout -->
+  <property name="hibernate.show_sql">true</property>
+  <!-- Mappings for entity classes -->
+  <mapping class="com.example.entity.Manufacturer"/>
+  <mapping class="com.example.entity.Model"/>
+ </session-factory>
+</hibernate-configuration>
